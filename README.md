@@ -1,4 +1,4 @@
-# Cat-Wiki---Simple-Wikipedia-Clone
+# Cat-Wiki - Simple-Wikipedia-Clone
 
 A full stack wikipedia CRUD application built from the ground up and still going.
 
