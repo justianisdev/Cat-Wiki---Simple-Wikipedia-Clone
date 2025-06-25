@@ -12,13 +12,6 @@ import connectDB from "./database/connectdb.js"; // db connection function
 import articleRoutes from "./routes/article.routes.js"; // Importing article routes
 import userRoutes from "./routes/users.routes.js";
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self';"
-  );
-  next();
-});
 // Server Setup
 const app = express();
 const PORT = process.env.PORT || 11113;
@@ -50,6 +43,7 @@ connectDB(DATABASE_URL); // Connecting to the database
 app.listen(PORT, () => {
   console.log(`running`);
 });
+
 // MOSTOF THE RATE LIMITER SETUP WAS CHATGPT ASSISTED DUE TO A TIME CRUNCH WILL LEARN AND SET OWN
 // CONSTRAINTS LATER
 // Apply global API rate limiter to all /api routes
