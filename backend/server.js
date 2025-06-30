@@ -31,7 +31,9 @@ const authLimiter = rateLimit({
     "Too many login/register attempts, please try again after 15 minutes.",
 });
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({ origin: "https://catwiki-frontend.onrender.com/", credentials: true })
+);
 app.use(express.json());
 connectDB(DATABASE_URL);
 app.listen(PORT, () => {
