@@ -39,7 +39,7 @@ connectDB(DATABASE_URL);
 app.listen(PORT, () => {
   console.log(`running`);
 });
-
+app.set("trust proxy", 1);
 app.use("/api", apiLimiter);
 
 app.use("/api/login", authLimiter);
