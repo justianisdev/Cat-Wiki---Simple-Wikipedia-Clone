@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./reusables/user/register.jsx";
 import Login from "./reusables/user/login.jsx";
 import Create from "./Create";
-import Edit from "./edit.jsx";
+import Edit from "./Edit.jsx";
 import Display from "./Display";
 import Home from "./Home";
 import NoPage from "./reusables/NoPage";
