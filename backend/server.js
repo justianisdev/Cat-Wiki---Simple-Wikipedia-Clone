@@ -30,9 +30,16 @@ const authLimiter = rateLimit({
   message:
     "Too many login/register attempts, please try again after 15 minutes.",
 });
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://cw-7vtg.onrender.com/",
+];
 
 app.use(
-  cors({ origin: "https://catwiki-frontend.onrender.com/", credentials: true })
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
 );
 app.use(express.json());
 connectDB(DATABASE_URL);
