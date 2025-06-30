@@ -30,14 +30,10 @@ const authLimiter = rateLimit({
   message:
     "Too many login/register attempts, please try again after 15 minutes.",
 });
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://cw-7vtg.onrender.com/",
-];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: ["https://your-frontend-url.vercel.app", "http://localhost:3000"],
     credentials: true,
   })
 );
