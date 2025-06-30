@@ -3,9 +3,11 @@ import axios from "axios";
 import NoPage from "./reusables/NoPage";
 import ReactMarkdown from "react-markdown";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import rehypeSanitize from "rehype-sanitize";
 const Display = () => {
+  const Navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState("");
 
@@ -18,28 +20,32 @@ const Display = () => {
         setData(response.data);
       } catch (error) {
         console.log(error);
+        Navigate("/404");
       }
     }
     getPage();
-  }, [id]);
-  console.log("API:", import.meta.env.VITE_API_URL);
+  }, [id, Navigate]);
   return (
-    <>
-      {data ? (
-        <>
-          {" "}
-          <h1 id="bogos">{data.title}</h1>
-          <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
-            {data.content}
-          </ReactMarkdown>
-          <h4>Writer(s): {data.author}</h4>
-        </>
-      ) : (
-        <>
-          <NoPage />
-        </>
+    <div className="display-page">
+      {data && (
+        <div className="display-page-inner">
+          <div className="display-page-title">
+            <h1>{data.title}</h1>
+          </div>
+          <div className="display-page-content">
+            <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
+              {data.content}
+            </ReactMarkdown>
+          </div>
+          <div className="display-page-author">
+            <h4>Writer(s): {data.author?.username}</h4>
+            <h4>Editor(s): {data?.editors}</h4>
+            <h4>Uploaded at {data.uploadDate}</h4>
+            <a href={`/edit/${id}`}>edit this page</a>
+          </div>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 

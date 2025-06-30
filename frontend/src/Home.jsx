@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// this is the home page for the wiki
 
 const Home = () => {
   async function articleFetch() {
@@ -22,18 +21,25 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <h1>Welcome to CAT WIKI</h1>
-      <p>This is the home page for the cat wiki</p>
-      <h3>browse</h3>
-      <ul>
-        {data.map((article, index) => (
-          <li key={index}>
-            <Link to={`/page/${article._id}`}>{article.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </>
+    <div className="home-page">
+      <div className="home-page-inner">
+        <h1 className="home-title">Welcome to CAT WIKI</h1>
+        <p className="home-description">
+          This is the home page for the cat wiki
+        </p>
+
+        <h3 className="home-subtitle">Browse</h3>
+        <ul className="home-article-list">
+          {data.map((article, index) => (
+            <li key={index}>
+              <Link to={`/page/${article._id}`} className="home-article-link">
+                {article.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

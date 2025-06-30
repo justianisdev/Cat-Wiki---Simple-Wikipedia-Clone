@@ -1,0 +1,96 @@
+.create-page {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.create-page-inner {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-page-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.create-page-markdown-link {
+  font-size: 0.95rem;
+  color: #0af;
+  text-decoration: unset;
+  margin-bottom: 20px;
+}
+
+.create-page-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.text-input {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 12px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 40px;
+  transition: border-color 0.2s;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #0af;
+}
+
+#text-input-content {
+  min-height: 150px;
+  max-height: 400px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: white;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: rgb(16, 16, 16);
+  color: white;
+}
+
+.submit-feedback {
+  color: white;
+  margin-top: 20px;
+}

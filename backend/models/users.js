@@ -1,10 +1,5 @@
-// CAT WIKI Backend Server
-// This file sets up the schema for users in the database
-// It defines the structure of the users documents that will be stored in MongoDB
-
-// Importing Modules
 import mongoose from "mongoose";
-const { Schema } = mongoose; // importing schema from mongoose
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
   username: {
